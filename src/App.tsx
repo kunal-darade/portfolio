@@ -238,34 +238,7 @@ function HeroSection() {
 function AboutSection() {
   const aboutRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.about-avatar-wrapper', {
-        scrollTrigger: { trigger: '.about-avatar-wrapper', start: 'top 80%' },
-        scale: 0.8,
-        opacity: 0,
-        duration: 1,
-        ease: 'back.out(1.7)',
-      });
-      gsap.from('.about-info > *', {
-        scrollTrigger: { trigger: '.about-info', start: 'top 80%' },
-        y: 40,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.15,
-        ease: 'power3.out',
-      });
-      gsap.from('.about-detail-item', {
-        scrollTrigger: { trigger: '.about-details', start: 'top 85%' },
-        y: 30,
-        opacity: 0,
-        duration: 0.5,
-        stagger: 0.1,
-        ease: 'power3.out',
-      });
-    }, aboutRef);
-    return () => ctx.revert();
-  }, []);
+  // Scroll animations removed so everything is visible immediately
 
   return (
     <section className="about-section" id="about" ref={aboutRef}>
@@ -324,29 +297,7 @@ function AboutSection() {
 function SkillsSection() {
   const skillsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.skill-card', {
-        scrollTrigger: { trigger: '.skills-grid', start: 'top 80%' },
-        y: 60,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.12,
-        ease: 'power3.out',
-      });
-
-      document.querySelectorAll('.skill-bar-fill').forEach((bar) => {
-        const target = bar.getAttribute('data-width') || '0%';
-        gsap.to(bar, {
-          scrollTrigger: { trigger: bar, start: 'top 90%' },
-          width: target,
-          duration: 1.5,
-          ease: 'power3.out',
-        });
-      });
-    }, skillsRef);
-    return () => ctx.revert();
-  }, []);
+  // All scroll animations removed to keep it simple
 
   const skills = [
     {
@@ -408,7 +359,7 @@ function SkillsSection() {
                     <span>{bar.value}</span>
                   </div>
                   <div className="skill-bar">
-                    <div className="skill-bar-fill" data-width={bar.value} />
+                    <div className="skill-bar-fill" style={{ width: bar.value }} />
                   </div>
                 </div>
               ))}
@@ -424,19 +375,7 @@ function SkillsSection() {
 function EducationSection() {
   const eduRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.timeline-item', {
-        scrollTrigger: { trigger: '.timeline', start: 'top 80%' },
-        y: 60,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.25,
-        ease: 'power3.out',
-      });
-    }, eduRef);
-    return () => ctx.revert();
-  }, []);
+  // Scroll animations removed so everything is visible immediately
 
   return (
     <section className="education-section" id="education" ref={eduRef}>
@@ -488,19 +427,7 @@ function EducationSection() {
 function ProjectsSection() {
   const projRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.project-card', {
-        scrollTrigger: { trigger: '.projects-grid', start: 'top 80%' },
-        y: 80,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
-      });
-    }, projRef);
-    return () => ctx.revert();
-  }, []);
+  // Scroll animations removed so everything is visible immediately
 
   const projects = [
     {
@@ -565,27 +492,7 @@ function ProjectsSection() {
 function ContactSection() {
   const contactRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.contact-info > *', {
-        scrollTrigger: { trigger: '.contact-grid', start: 'top 80%' },
-        x: -40,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.12,
-        ease: 'power3.out',
-      });
-      gsap.from('.contact-form > *', {
-        scrollTrigger: { trigger: '.contact-form', start: 'top 85%' },
-        x: 40,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.1,
-        ease: 'power3.out',
-      });
-    }, contactRef);
-    return () => ctx.revert();
-  }, []);
+  // Scroll animations removed so everything is visible immediately
 
   return (
     <section className="contact-section" id="contact" ref={contactRef}>
