@@ -12,10 +12,6 @@ import {
   FiBarChart2,
   FiCpu,
   FiTrendingUp,
-  FiActivity,
-  FiTarget,
-  FiZap,
-  FiLayers,
 } from 'react-icons/fi';
 import {
   SiPython,
